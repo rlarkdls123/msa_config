@@ -1,0 +1,14 @@
+spring:
+  kafka:
+    kafka-server: localhost:9092
+    
+feign:
+  circuitbreaker:
+    enabled: true
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      productService:
+        failure-rate-threshold: 40
+        wait-duration-in-open-state: 10s
